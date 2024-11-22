@@ -1,7 +1,14 @@
-sign = str(input('Write one of this signs +,-,:,x,avr,%2 or %:'))
-numbers = int(input('How much numbers do you want to calculate?'))
+"""
+    Hello and thanks for take a look at this script!
+    This script its a calculator example on console with conditions and inputs using personalized formules,
+without using any added library like MATH,NUMPY,ect
+    Follow @robert_de_romania on TikTok if you want!
+"""
 
-#Simplu,doar calculează suma dintre câteva numere,maxim 6
+sign = str(input('Write one of this signs +,-,:,x,avr,%2 or %:')) # Enter a sign to know the script what calculations what u want to make
+numbers = int(input('How much numbers do you want to calculate?')) # Numbers of numbers what you want to use in calculation
+
+# Simple,only we calculate the addition of a few numbers,max 6 numbers
 if sign == '+':
     if numbers <= 1 or numbers > 6:
         print(f'ERROR:You cant calculate {numbers} numbers.Restart program and put a valid value')
@@ -41,7 +48,7 @@ if sign == '+':
         result = x + y + z + a + b + c
         print(f'{x}+{y}+{z}+{a}+{b}+{c}={result}')
 
-#Simplu,doar calculează scăderea dintre câteva numere,maxim 6
+# Simple,just calculate the subtraction of a few numbers,max 6 numbers
 elif sign == '-':
     if numbers <= 1 or numbers > 6:
         print(f'ERROR:You cant calculate {numbers} numbers.Restart program and put a valid value')
@@ -81,7 +88,7 @@ elif sign == '-':
         result = x - y - z - a - b - c
         print(f'{x}-{y}-{z}-{a}-{b}-{c}={result}')
 
-#Împărțirea,folositor pentru a calcula de câte ori intră un număr în altul,maxim 6 numere
+# Division,useful for calculating how many times one number goes intro another,max 6 numbers
 elif sign == ':' or sign == '/':
     if numbers <= 1 or numbers > 6:
         print(f'ERROR:You cant calculate {numbers} numbers.Restart program and put a valid value')
@@ -121,7 +128,7 @@ elif sign == ':' or sign == '/':
         result = x / y / z / a / b / c
         print(f'{x}:{y}:{z}:{a}:{b}:{c}={result}')
 
-#Îmulțirea,îmulțește câteva numere pentru a obține un număr mai mare,maxim 6 numere.EXEMPLU : 3*4= 3+3+3+3= 9
+# Multiplication,multiplying several numbers to get a larger number.EXAMPLE : 3*4 = 3+3+3+3 = 12
 elif sign == 'x' or sign == "*":
     if numbers <= 1 or numbers > 6:
         print(f'ERROR:You cant calculate {numbers} numbers.Restart program and put a valid value')
@@ -161,7 +168,7 @@ elif sign == 'x' or sign == "*":
         result = x * y * z * a * b * c
         print(f'{x}x{y}x{z}x{a}x{b}x{c}={result}')
 
-#Media(average),folositor pentru a calcula media generală,media mililitrilor din sticle de apă,ect.EXEMPLU:(6+8)/2 = 7 (media generală)
+# Average,useful for calculating an overall average.EXAMPLE:(6+8)/2 = 14/2 = 7 (media generală)
 if sign == 'avr':
     if numbers <= 1 or numbers > 6:
         print(f'ERROR:You cant calculate {numbers} numbers.Restart program and put a valid value')
@@ -201,7 +208,7 @@ if sign == 'avr':
         result = (x + y + z + a + b + c) / 6
         print(f'({x}+{y}+{z}+{a}+{b}+{c})/6={result}')
 
-#Folositor pentru a afla dintr-un număr cât înseamnă X% procente. EXEMPLU:30% din 100 este 70
+# Useful for finding out what X% of a number is in percentages. EXAMPLE:30% of 100 is 30
 elif sign == '%':
     if numbers < 1 or numbers > 1:
         print(f'ERROR:You cant calculate {numbers} numbers.Restart program and put a valid value')
@@ -212,7 +219,7 @@ elif sign == '%':
         result = y * z
         print(f'{x}% of {y} is {result}')
 
-#Folositor pentru a afla câte ?% procente înseamnă un număr dintr-alt număr. EXEMPLU: 20 din 100 este %20
+# Useful for finding out how many ?% precent a number is of another number. EXAMPLE: 20 of 100 is %20
 elif sign == '%2':
     if numbers < 1 or numbers > 1:
         print(f'ERROR:You cant calculate {numbers} numbers.Restart program and put a valid value')
