@@ -4,7 +4,7 @@
 where you have to memorize the colors that will be displayed on the screen and then you have to press the colors
 in a correct order. If you press the colors in a wrong order, you will lose the game and you will have to start again.
 You can also see the best score and the current score on the screen. The best score will be updated only if the current
-score is higher than the best score.
+score is higher than the best score. (In the last version of the game, I added a text where show you the number of tries)
     Follow me on GitHub and TikTok(@robert_de_romania) if you want to support me :)
 """
 
@@ -19,6 +19,7 @@ root.geometry("500x500")
 # Main variables
 best_score = 0
 current_score = 0
+tries = 0
 global_index = current_score
 
 game_started = False
@@ -32,15 +33,16 @@ selected_choices = [] # Here will be selected random colors to memorize
 user_choices = [] # Here will be saved the entered values by USER
 
 # All Functions
-def game_lore():
+def game_lore(): # The general function of the game logic
     pass
 
-def modify_start_button():
+def modify_start_button(): # The function that will modify the start button text,depends on the game state,after calls the game_lore() function
     pass
 
-def start_game():
+def start_game(): # Resets all variables to starts/stop the game normally
     global game_started,lose,can_continue,can_select,selected,show_ready,best_score,global_index
     if not game_started:
+        # Reset all variables
         game_started = True
         lose = False
         selected_choices.clear()
@@ -59,6 +61,7 @@ def start_game():
 
     modify_start_button()
 
+# This functions will be called by colored buttons
 def blue_input_system():
     pass
 
@@ -76,13 +79,13 @@ def purple_input_system():
 
 # Frames
 frame1 = tk.Frame(root)
-frame2 = tk.Frame(root)
 
 # Elements
 start_button = tk.Button(root,text="START GAME",width=11,height=2,command=start_game)
 statusgame_text = tk.Label(root,text=f"The game has not started yet",font=("Arial",20),height=5)
 best_score_text = tk.Label(root,text=f"BEST SCORE: {best_score}")
 current_score_text = tk.Label(root,text=f"CURRENT SCORE: {current_score}")
+tries_text = tk.Label(root,text=f"TRIES: {tries}")
 
 # Updated Functions
 def game_lore():
@@ -196,7 +199,7 @@ def modify_start_button():
     game_lore()
 
 def verify_if_correct():
-    global lose,selected,can_select,current_score,best_score,global_index,can_continue
+    global lose,selected,can_select,current_score,best_score,global_index,can_continue,tries
     print("A color button was pressed")
     selected = False
     if user_choices[global_index] == selected_choices[global_index]:
@@ -218,6 +221,8 @@ def verify_if_correct():
             best_score_text.config(text=f"BEST SCORE: {best_score}")
         if lose:
             global game_started
+            tries += 1
+            tries_text.config(text=f"TRIES: {tries}")
             game_started = False
             if not game_started:
                 start_button.config(text="TRY AGAIN")
@@ -243,6 +248,8 @@ def verify_if_correct():
                 best_score_text.config(text=f"BEST SCORE: {best_score}")
             if lose:
                 global_index = 0
+                tries += 1
+                tries_text.config(text=f"TRIES: {tries}")
                 game_started = False
                 if not game_started:
                     start_button.config(text="TRY AGAIN")
@@ -265,5 +272,6 @@ purple_button.pack(side=tk.LEFT,padx=1)
 start_button.pack(pady=11)
 best_score_text.pack()
 current_score_text.pack()
+tries_text.pack()
 
 root.mainloop()
