@@ -105,6 +105,7 @@ def time_lore(): # Update the "time_text" Label(text) with the current time
         started = False
         start_stop_button.config(text="STOP",bg="red")
         try:
+            sound = pygame.mixer.Sound(audio_file_path)
             sound.play()
             messagebox.showinfo("Alarm",message)
             sound.stop()
