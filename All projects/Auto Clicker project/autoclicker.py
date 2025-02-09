@@ -10,8 +10,8 @@ import pyautogui # The library what help us to make the clicks on a automatic mo
 from time import sleep # We use only a function from TIME library
 
 # The cordonates where we want to make the clicks
-x_loc = 300
-y_loc = 400
+x_loc = 490
+y_loc = 600
 
 # Total number clicks
 num_clicks = 99999

@@ -9,13 +9,13 @@ import random # Using a library what we need
 
 # Intro and a input to get starded
 print('Welcome to Guess Number game!')
-game_mode = str(input('Please enter game difficulty(EASY-e,NORMAL-n,HARD-h,IMPOSSIBLE-i)'))
+game_mode = str(input('Please enter game difficulty(EASY-e,NORMAL-n,HARD-h,IMPOSSIBLE-i): '))
 game_mode = game_mode.lower() # Make the string (input) from this:"HeLLo" to this "hello"
 
 if game_mode == 'e' or game_mode == 'n' or game_mode == 'h' or game_mode == 'i': # If u enter a difficulty on a correct way
     print('Okay...')                                                             # The game starting
     if game_mode == 'e': # EASY mode
-        x = int(input('Enter a number 1-5')) # Your input,here you guess the correct number
+        x = int(input('Enter a number 1-5: ')) # Your input,here you guess the correct number
         number = int(random.uniform(1,6)) # Generate a random number between 1.0000...001 and 5.99999...9999
         print(f'You entered the number {x} and the number what you needed to guess was {number}')
         if x == number: # If your number is equals with the generated number

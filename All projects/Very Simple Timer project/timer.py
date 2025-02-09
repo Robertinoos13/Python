@@ -6,7 +6,7 @@
 
 from time import sleep
 x = 0 # Seconds
-y = 0 # Hours
+y = 0 # Minutes
 set = str(input('Enter any key to start the timer'))
 
 while True:

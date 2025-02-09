@@ -1,0 +1,1 @@
+This folder is not so special, but here will be added .mp3 files examples for the programs what needs a sound file to works fine.
