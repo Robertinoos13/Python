@@ -23,7 +23,7 @@ To run this script, you need the following Python libraries:
 - Accept only .mp3 files
 -You can switch the current song with 2 buttons
 
-## Quick Updates Hystory
+## Quick Review Of Updates Hystory
 - Total Updates: 0
 - Total Updates Of Fixed Bugs: 0
 - Total Updates Of Adding New Features: 0

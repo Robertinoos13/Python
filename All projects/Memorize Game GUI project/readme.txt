@@ -17,7 +17,7 @@ To run this script, you need the following Python libraries:
 - You can see your current records, like best score,current score and number of total tries
 - Interactive
 
-## Quick Updates Hystory
+## Quick Review Of Updates Hystory
 - Total Updates: 1
 - Total Updates Of Fixed Bugs: 0
 - Total Updates Of Adding New Features: 1

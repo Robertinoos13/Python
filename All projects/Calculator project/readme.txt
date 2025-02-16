@@ -15,11 +15,11 @@ To run this script, you don't need any Python Library
 - Good for beginers who want to learn Python Basics
 - Have any basic calculator features
 
-## Quick Updates Hystory
-- Total Updates: 0
+## Quick Review Of Updates Hystory
+- Total Updates: 1
 - Total Updates Of Fixed Bugs: 0
 - Total Updates Of Adding New Features: 0
-- Total Updates Of Other Types Of Updates: 0
+- Total Updates Of Other Types Of Updates: 1
 
 ## How To Use The Script?
 - Put the script in your IDE

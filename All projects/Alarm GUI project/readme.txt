@@ -19,7 +19,7 @@ To run this script, you need the following Python libraries:
 - The user can set a costum seconds number for counting
 - Repeating Mode
 
-## Quick Updates Hystory
+## Quick Review Of Updates Hystory
 - Total Updates: 1
 - Total Updates Of Fixed Bugs: 1
 - Total Updates Of Adding New Features: 0

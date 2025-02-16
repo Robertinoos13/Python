@@ -16,7 +16,7 @@ To run this script, you need the following Python libraries:
 - More options to input more or less number of players
 - Equal number of players on every team
 
-## Quick Updates Hystory
+## Quick Review Of Updates Hystory
 - Total Updates: 1
 - Total Updates Of Fixed Bugs: 1
 - Total Updates Of Adding New Features: 0

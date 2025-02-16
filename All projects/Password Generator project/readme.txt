@@ -17,7 +17,7 @@ To run this script, you need the following Python libraries:
 - random.choice() function example
 - Don't generate very long passwords,only the minimum of most password systems condition
 
-## Quick Updates Hystory
+## Quick Review Of Updates Hystory
 - Total Updates: 0
 - Total Updates Of Fixed Bugs: 0
 - Total Updates Of Adding New Features: 0

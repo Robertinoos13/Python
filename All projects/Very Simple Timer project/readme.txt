@@ -16,7 +16,7 @@ To run this script, you need the following Python libraries:
 - Count seconds and minutes
 - Can start it when you want after you run this program
 
-## Quick Updates Hystory
+## Quick Review Of Updates Hystory
 - Total Updates: 1
 - Total Updates Of Fixed Bugs: 0
 - Total Updates Of Adding New Features: 0

@@ -17,7 +17,7 @@ To run this script, you need the following Python libraries:
 - 5 seconds to get ready
 - You can put pause of some seconds between clicks
 
-## Quick Updates Hystory
+## Quick Review Of Updates Hystory
 - Total Updates: 0
 - Total Updates Of Fixed Bugs: 0
 - Total Updates Of Adding New Features: 0

@@ -14,7 +14,7 @@ To run this script, you dont need any Python Library
 - Flexible inputs
 - Special calculation FUNCTION: Average
 
-## Quick Updates Hystory
+## Quick Review Of Updates Hystory
 - Total Updates: 0
 - Total Updates Of Fixed Bugs: 0
 - Total Updates Of Adding New Features: 0

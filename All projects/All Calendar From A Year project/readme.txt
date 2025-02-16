@@ -15,7 +15,7 @@ To run this script, you need the following Python libraries:
 - Shows a calendar in console
 - Can wait for a integer user input
 
-## Quick Updates Hystory
+## Quick Review Of Updates Hystory
 - Total Updates: 1
 - Total Updates Of Fixed Bugs: 0
 - Total Updates Of Adding New Features: 0

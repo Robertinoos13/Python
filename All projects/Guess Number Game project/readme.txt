@@ -17,7 +17,7 @@ To run this script, you need the following Python libraries:
 - The program can verify if you guess or not
 - 4 different difficulties 
 
-## Quick Updates Hystory
+## Quick Review Of Updates Hystory
 - Total Updates: 1
 - Total Updates Of Fixed Bugs: 0
 - Total Updates Of Adding New Features: 0
