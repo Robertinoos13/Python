@@ -12,7 +12,9 @@ minus_operations = ["-","minus","less","scade","scăzut"]
 divide_operations = [":","/","divide","împărțit","împarte"]
 multiple_operations = ["*","x","îmulțit","multiple","multipled"]
 average_operations = ["avr","average","general","media","medie"]
-all_operations = [add_operations,minus_operations,divide_operations,multiple_operations,average_operations]
+find_procent_operations = ["%","%i","%1","1%","procent","procent1","1procent","procentaj","procentaj1","1procentaj"]
+find_number_operations = ["%ii","%2","2%","procent2","procentaj2","2procent","procentaj2","2procentaj"]
+all_operations = [add_operations,minus_operations,divide_operations,multiple_operations,average_operations,find_procent_operations,find_number_operations]
 
 class Calculator:
     def __init__(self,operator,numbers):
@@ -53,8 +55,18 @@ class Calculator:
                 numbers_in_total += 1
             self.result = self.result / numbers_in_total
             print(f"{self.result:.2f}")
+    def find_procent(self):
+        if self.operator in find_procent_operations:
+            self.result = self.numbers[0] / self.numbers[1] * 100
+            print(f"{self.numbers[0]} of {self.numbers[1]} is {self.result:.2f}%")
+    def find_number(self):
+        if self.operator in find_number_operations:
+            self.result = self.numbers[0] / 100 * self.numbers[1]
+            print(f"{self.numbers[0]}% of {self.numbers[1]} is {self.result:.2f}")
 
-selected_operation = str(input("Enter a operation like +,-,x,/ or avr: "))
+
+selected_operation = str(input("Enter a operation like +,-,x,/,%1 or avr: "))
+calculator = Calculator(selected_operation,nums)
 if selected_operation in add_operations or selected_operation in minus_operations or selected_operation in divide_operations or selected_operation in multiple_operations or selected_operation in average_operations:
     while True:
         try:
@@ -62,11 +74,21 @@ if selected_operation in add_operations or selected_operation in minus_operation
             nums.append(input_value)
         except ValueError:
             break
+elif selected_operation in find_procent_operations:
+    input_value = float(input())
+    nums.append(input_value)
+    input_value = float(input(f"{nums[0]} of ? is ?% "))
+    nums.append(input_value)
+    calculator.find_procent()
+elif selected_operation in find_number_operations:
+    input_value = float(input())
+    nums.append(input_value)
+    input_value = float(input(f"{nums[0]}% of ? is ? "))
+    nums.append(input_value)
+    calculator.find_number()
 else:
     raise ValueError(f"Invalid operation selected. Please run the script again and enter a valid operation: {all_operations}")
 
-
-calculator = Calculator(selected_operation,nums)
 
 calculator.add()
 calculator.divide()
