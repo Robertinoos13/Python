@@ -156,6 +156,7 @@ class App(tk.Tk):
             self.rounds_played += 1
             self.colors_choosed_by_calculator.clear()
             self.tries_this_round = 0
+            self.tries_score_text.config(text=f"Tries this round: {self.tries_this_round}")
             self.rounds_score_text.config(text=f"Rounds played in total: {self.rounds_played}")
             
         if "?" in self.colors_choosed_by_user:

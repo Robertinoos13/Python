@@ -18,8 +18,8 @@ To run this script, you need the following Python libraries:
 - Its a game finded on TikTok 
 
 ## Quick Review Of Updates Hystory
-- Total Updates: 0
-- Total Updates Of Fixed Bugs: 0
+- Total Updates: 1
+- Total Updates Of Fixed Bugs: 1
 - Total Updates Of Adding New Features: 0
 - Total Updates Of Other Types Of Updates: 0
 
