@@ -5,7 +5,7 @@ import os,pygame
 # Windows setup
 app = tk.Tk()
 app.geometry("300x333")
-app.title("Music player")
+app.title("Music Player")
 app.configure(bg="black")
 
 # Main Variables
@@ -16,129 +16,114 @@ except Exception as e:
     print(f"Error: {e}")
 current_index = 0
 current_file = ""
-try:
-    pygame.mixer.init()
-    sound = pygame.mixer.Sound(sound_folder_path + "/" + current_file)
-except:
-    print("No .mp3 found")
+
+pygame.mixer.init()
+    
 
 clicked_pause = True
 
 playing_sound = False
-
-# All Functions
-def display_current_song_name():
-    pass
-
-def pause():
-    pass
-
-def next():
-    pass
-
-def back():
-    pass
-
-def acess_folder():
-    pass
-
-def play_sound():
-    pass
-
-def check_if_finished():
-    pass
 
 # Frames
 frame1 = tk.Frame(app,bg="#151515")
 frame2 = tk.Frame(app,bg="black")
 
 # GUI Elements
-current_song_name_text = tk.Label(app,text="No song selected",font=("Roman",15),bg="#013000",fg="white")
-pause_button = tk.Button(frame1,text="▶",bg="white",font=("",11),anchor="center", width=4,height=2,command=pause)
-next_button = tk.Button(frame1,text=">",anchor="center",command=next)
-back_button = tk.Button(frame1,text="<",anchor="center",command=back)
-path_folder_input = tk.Entry(frame2,width=25)
+current_song_name_text = tk.Label(app,text="No song selected", font=("Roman",15), bg="#013000", fg="white", wraplength=300)
+pause_button = tk.Button(frame1,text="▶", bg="white", font=("",11), anchor="center", width=4,height=2)
+next_button = tk.Button(frame1,text=">", anchor="center", command=next)
+back_button = tk.Button(frame1,text="<", anchor="center")
+path_folder_input = tk.Entry(frame2, width=25)
 path_folder_input.insert(0,"C:Enter/a/folder/path/here")
-set_folder_button = tk.Button(frame2,text="ACCES FOLDER")
+set_folder_button = tk.Button(frame2, text="ACCES FOLDER")
 
-# Updated functions
+# All functions
+
 def play_sound():
-    global clicked_pause,sound,start_time,playing_sound,current_file,sound_folder_path
-    if not clicked_pause:
-        if not playing_sound:
-            sound.play()
-            playing_sound = True
-    else:
-        if playing_sound:
-            sound.stop()
-            playing_sound = False
+    global clicked_pause,playing_sound,current_index
+    
+    if not files:
+        messagebox.showerror("Error","No .mp3 files in the folder :(")
+        return
+    
+    pygame.mixer.music.load(os.path.join(sound_folder_path, files[current_index]))
+    pygame.mixer.music.play()
+    playing_sound = True
+    clicked_pause = False
+    pause_button.config(text="II")
 
 def pause():
-    global clicked_pause,sound,pause_time,playing_sound
+    global clicked_pause,playing_sound
+
     if clicked_pause:
+        pygame.mixer.music.unpause()
         pause_button.config(text="II")
         clicked_pause = False
-        if not playing_sound:
-            sound.play()
-            playing_sound = True
+        playing_sound = True
     else:
+        pygame.mixer.music.pause()
         pause_button.config(text="▶")
         clicked_pause = True
-        if playing_sound:
-            sound.stop()
-            playing_sound = False
-    play_sound()
+        playing_sound = False
+
 
 def next():
-    global current_index,current_file,files,current_song_name_text,sound,playing_sound
-    if current_index > len(files) - 1:
-        current_index = 0
-    else:
-        current_index += 1 
-    current_file = files[current_index]
-    current_song_name_text.config(text=current_file)
-    sound.stop()
-    playing_sound = False
-    sound = pygame.mixer.Sound(sound_folder_path + "/" + current_file)
-    pause()
+    global current_index, playing_sound, clicked_pause
+
+    if not files:
+        return
+    
+    current_index = (current_index + 1) % len(files)
+    clicked_pause = False
+    playing_sound = True
+    update_song()
 
 
 def back():
-    global current_index,files,current_file,sound,playing_sound
-    if current_index < 0:
-        current_index = len(files) - 1
-    else:
-        current_index -= 1
-    current_file = files[current_index]
-    current_song_name_text.config(text=current_file)
-    sound.stop()
-    playing_sound = False
-    sound = pygame.mixer.Sound(sound_folder_path + "/" + current_file)
-    pause()
+    global current_index, clicked_pause, playing_sound
+    if not files:
+        return
+    
+    current_index = (current_index - 1) % len(files)
 
+    clicked_pause = False
+    playing_sound = True
+    update_song()
+
+back_button.config(command=back)
+
+def update_song():
+    global playing_sound
+
+    if files:
+        current_song_name_text.config(text=files[current_index])
+        pygame.mixer.music.stop()
+        playing_sound = False
+        play_sound()
 
 def acess_folder():
-    global current_index,current_file,files,sound_folder_path,path_folder_input,sound
-    sound_folder_path = path_folder_input.get()
-    
-    try:
-        files = [f for f in os.listdir(sound_folder_path) if os.path.isfile(os.path.join(sound_folder_path, f)) and f.endswith(".mp3")]
-        print(f"Files accesed succesfully: {files}")
-        pygame.mixer.init()
-    except Exception as e:
-        messagebox.showerror("Error",f"A error has occuried when you wanted to acces a folder: {e}")
+    global current_index,files,sound_folder_path,path_folder_input,sound
 
-    current_file = files[0]
-    sound = pygame.mixer.Sound(sound_folder_path + "/" + current_file)
-    current_song_name_text.config(text=current_file)
+    sound_folder_path = path_folder_input.get()
+
+    if not os.path.isdir(sound_folder_path):
+        messagebox.showerror("Error", "Invalid folder path")
+        return
+    
+    files = [f for f in os.listdir(sound_folder_path) if f.endswith(".mp3")]
+
+    if not files:
+        messagebox.showerror("Error", "No .mp3 files found here")
+
+    current_index = 0
+    update_song()
 
 def check_if_finished():
     global playing_sound
-    if not pygame.mixer.get_busy() and playing_sound:
-        playing_sound = False
+    if not pygame.mixer.music.get_busy() and playing_sound:
         next()
-    app.after(1000,  check_if_finished)
-        
+    app.after(1000, check_if_finished)
+    print(current_index)    
 
 # Pack elements
 current_song_name_text.pack(pady=11)
