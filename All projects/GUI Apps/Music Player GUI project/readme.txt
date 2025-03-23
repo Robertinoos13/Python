@@ -15,6 +15,7 @@ To run this script, you need the following Python libraries:
 - 'tkinter'
 - 'pygame'
 - 'os'
+- 'random'
 
 ## Main Script Features
 - Can acces a folder from your disk
@@ -22,9 +23,9 @@ To run this script, you need the following Python libraries:
 - You can switch the current song with 2 buttons
 
 ## Quick Review Of Updates Hystory
-- Total Updates: 1
+- Total Updates: 2
 - Total Updates Of Fixed Bugs: 0
-- Total Updates Of Adding New Features: 1
+- Total Updates Of Adding New Features: 2
 - Total Updates Of Other Types Of Updates: 0
 
 ## How To Use The Script?

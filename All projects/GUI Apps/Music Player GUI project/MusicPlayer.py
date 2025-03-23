@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-import os,pygame
+import os, pygame, random
 
 # Windows setup
 app = tk.Tk()
@@ -9,7 +9,7 @@ app.title("Music Player")
 app.configure(bg="black")
 
 # Main Variables
-sound_folder_path = ""
+sound_folder_path = "" # Put here a path to a folder with .mp3 files
 try:
     files = [f for f in os.listdir(sound_folder_path) if os.path.isfile(os.path.join(sound_folder_path, f)) and f.endswith(".mp3")]
 except Exception as e:
@@ -19,10 +19,10 @@ current_file = ""
 
 pygame.mixer.init()
     
-
 clicked_pause = True
-
 playing_sound = False
+repeat_mode = False
+random_mode = False
 
 # Frames
 frame1 = tk.Frame(app,bg="#151515")
@@ -30,9 +30,11 @@ frame2 = tk.Frame(app,bg="black")
 
 # GUI Elements
 current_song_name_text = tk.Label(app,text="No song selected", font=("Roman",15), bg="#013000", fg="white", wraplength=300)
-pause_button = tk.Button(frame1,text="▶", bg="white", font=("",11), anchor="center", width=4,height=2)
+repeat_button = tk.Button(frame1, text="🔁", anchor="center", bg="white")
 next_button = tk.Button(frame1,text=">", anchor="center", command=next)
+pause_button = tk.Button(frame1,text="▶", bg="white", font=("",11), anchor="center", width=4,height=2)
 back_button = tk.Button(frame1,text="<", anchor="center")
+random_button = tk.Button(frame1, text="🔀", anchor="center", bg="white")
 path_folder_input = tk.Entry(frame2, width=25)
 path_folder_input.insert(0,"C:Enter/a/folder/path/here")
 set_folder_button = tk.Button(frame2, text="ACCES FOLDER")
@@ -66,6 +68,14 @@ def pause():
         clicked_pause = True
         playing_sound = False
 
+def update_song():
+    global playing_sound
+
+    if files:
+        current_song_name_text.config(text=files[current_index])
+        pygame.mixer.music.stop()
+        playing_sound = False
+        play_sound()
 
 def next():
     global current_index, playing_sound, clicked_pause
@@ -92,14 +102,25 @@ def back():
 
 back_button.config(command=back)
 
-def update_song():
-    global playing_sound
+def set_repeat_mode():
+    global repeat_mode
 
-    if files:
-        current_song_name_text.config(text=files[current_index])
-        pygame.mixer.music.stop()
-        playing_sound = False
-        play_sound()
+    if repeat_mode:
+        repeat_mode = False
+        repeat_button.config(bg="white")
+    else:
+        repeat_mode = True
+        repeat_button.config(bg="green")
+
+def set_random_mode():
+    global random_mode
+
+    if random_mode:
+        random_mode = False
+        random_button.config(bg="white")
+    else:
+        random_mode = True
+        random_button.config(bg="green")
 
 def acess_folder():
     global current_index,files,sound_folder_path,path_folder_input,sound
@@ -120,20 +141,32 @@ def acess_folder():
 
 def check_if_finished():
     global playing_sound
-    if not pygame.mixer.music.get_busy() and playing_sound:
+    if not pygame.mixer.music.get_busy() and playing_sound and not random_mode and not repeat_mode:
         next()
+    elif not pygame.mixer.music.get_busy() and playing_sound and repeat_mode:
+        update_song()
+    elif not pygame.mixer.music.get_busy() and playing_sound and random_mode:
+        global current_index
+        current_index = random.randint(0, len(files) - 1)
+        update_song()
     app.after(1000, check_if_finished)
     print(current_index)    
 
 # Pack elements
 current_song_name_text.pack(pady=11)
+
 frame1.pack(pady=22)
+repeat_button.config(command=set_repeat_mode)
+repeat_button.pack(side=tk.RIGHT,padx=11)
 next_button.config(command=next)
-next_button.pack(side=tk.RIGHT,padx=5)
+next_button.pack(side=tk.RIGHT, padx=5)
 pause_button.config(command=pause)
-pause_button.pack(side=tk.RIGHT,padx=5)
+pause_button.pack(side=tk.RIGHT, padx=5)
 back_button.config(command=back)
-back_button.pack(side=tk.RIGHT,padx=5)
+back_button.pack(side=tk.RIGHT, padx=5)
+random_button.config(command=set_random_mode)
+random_button.pack(side=tk.RIGHT, padx=11)
+
 frame2.pack()
 path_folder_input.pack(side=tk.LEFT,padx=1)
 set_folder_button.config(command=acess_folder)
