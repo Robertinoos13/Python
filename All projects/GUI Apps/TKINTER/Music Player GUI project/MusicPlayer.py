@@ -72,7 +72,7 @@ def update_song():
     global playing_sound
 
     if files:
-        current_song_name_text.config(text=files[current_index])
+        current_song_name_text.config(text=files[current_index][:-4])
         pygame.mixer.music.stop()
         playing_sound = False
         play_sound()

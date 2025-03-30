@@ -4,9 +4,6 @@ Music Player
 ## Description
 This script is a simple GUI for an music player, which has options like any simple music player
 
-### ATTENTION!!!
-- This script is in BETA, you probability you will get bugs when you interact with GUI.
-
 ## Output
 The script produces a GUI interface, perfect for a basic music player
 
@@ -20,12 +17,14 @@ To run this script, you need the following Python libraries:
 ## Main Script Features
 - Can acces a folder from your disk
 - Accept only .mp3 files
+- Can run a .mp3 file
 - You can switch the current song with 2 buttons
+- You can pause the current song anytime and resume from where you paused
 
 ## Quick Review Of Updates Hystory
-- Total Updates: 2
+- Total Updates: 3
 - Total Updates Of Fixed Bugs: 0
-- Total Updates Of Adding New Features: 2
+- Total Updates Of Adding New Features: 3
 - Total Updates Of Other Types Of Updates: 0
 
 ## How To Use The Script?
