@@ -1,11 +1,11 @@
 # Script Name
-Simple Hello World GUI 
+Calculator 
 
 ## Description
-This script is a very simple GUI maked with PyQt6, where its a text with "Hello, World!" to learn the basic structure of a PyQt6 script
+This script is a regular calculator with GUEST USER INTERFACE maded with PyQt6
 
 ## Output
-The script produces a GUI with a text(label)
+The script produces a GUI with some buttons, perfect for a regular calculator 
 
 ## Libraries
 To run this script, you need the following Python libraries:
@@ -13,7 +13,9 @@ To run this script, you need the following Python libraries:
 - 'PyQt6'
 
 ## Main Script Features
-- Nothing special, only simpliticy
+- Interactive
+- Can calculate a simple math problem
+- Easy to use
 
 ## Quick Review Of Updates Hystory
 - Total Updates: 0
