@@ -1,11 +1,11 @@
 # Script Name
-Alarm with a GUI
+Timer
 
 ## Description
 This script is a very simple timer
 
 ## Output
-The script produces a GUI interface, perfect for a basic alarm
+The script produces a time in minutes and seconds in console
 
 ## Libraries
 To run this script, you need the following Python libraries:
