@@ -1,5 +1,5 @@
 # Script Name
-## 🎮 Phone Classifier GUI
+## 📱 Phone Classifier GUI
 
 ---
 
