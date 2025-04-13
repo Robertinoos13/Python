@@ -1,29 +1,49 @@
 # Script Name
-Timer
+## ⏱️ Timer
 
-## Description
-This script is a very simple timer
+---
 
-## Output
-The script produces a time in minutes and seconds in console
+## 📄 Description
+This script is a **very simple timer** designed to run directly in the console. It shows the elapsed time in minutes and seconds.
 
-## Libraries
-To run this script, you need the following Python libraries:
-- 'time'
+---
 
+## 🖥️ Output
+When executed, the script displays the elapsed **time in minutes and seconds** in the console.
 
-## Main Script Features
-- Count seconds and minutes
-- Can start it when you want after you run this program
+---
 
-## Quick Review Of Updates Hystory
-- Total Updates: 1
-- Total Updates Of Fixed Bugs: 0
-- Total Updates Of Adding New Features: 0
-- Total Updates Of Other Types Of Updates: 1
+## 📚 Libraries Required
+To run this script, you only need one built-in Python library:
+- `time`
 
-## How To Use The Script?
-- Put the script in your IDE
-- Be sure you downloaded the Python Libraries
-- If you dont know how to download Python Libraries, click Win + R, enter "cmd" in input field and write "pip install {library's name what do you want to use}"
-- After this steps from above me, you can run the code without errors
+No external libraries required = no installation headaches! 🎉
+
+---
+
+## ⚙️ Main Script Features
+- ⏳ Counts seconds and minutes
+- ▶️ Can be started manually after running the script
+
+---
+
+## 📝 Quick Review of Update History
+- **Total Updates:** 1  
+- **Bug Fixes:** 0  
+- **New Features:** 0  
+- **Other Types of Updates:** 1  
+
+---
+
+## 🚀 How To Use The Script
+1. Place the script in your favorite IDE.
+2. Make sure Python is installed on your system.
+3. Since this script uses only built-in libraries, you don't need to install anything.
+   - But if you *ever* need to install libraries in the future, here's how:
+     - Press `Win + R`, type `cmd`, and hit Enter
+     - Then type: `pip install library_name`
+4. After the steps above, run the code and you're good to go!
+
+---
+
+Happy coding! 🐍✨
