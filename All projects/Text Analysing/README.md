@@ -4,38 +4,34 @@
 ---
 
 ## 📄 Description
-This script is a analyser, what can count from you input the numbers of words, numbers, dots, ect.
+This script is a analyser, what can count from you input the number of words, numbers, dots, ect.
 
 ---
 
 ## 🖥️ Output
 Once you input your text, the script counts:
-- **i continue later**
-- **Team B**
-
-Each with an equal number of players (or nearly equal if odd).
+- **words**
+- **numbers**
+- **commas**
+- **dots**
 
 ---
 
 ## 📚 Libraries Required
-To run this script, you'll need the following **built-in** Python libraries:
-- `random`
-- `time`
-
-No external installations required! 🔧
+To run this script, you dont need any library
 
 ---
 
 ## ⚙️ Main Script Features
-- 🔢 Flexible input: add more or fewer players (up to 20)
-- ⚖️ Equal (or nearly equal) distribution between teams
-- ⏱️ Minor time delays for better UX using `time.sleep()`
+- 🔢 Count certain elements in your text
+- 📈 Organized results
+- 👌 Easy for use
 
 ---
 
 ## 📝 Quick Review of Update History
-- **Total Updates:** 1  
-- **Bug Fixes:** 1  
+- **Total Updates:** 0  
+- **Bug Fixes:** 0  
 - **New Features Added:** 0  
 - **Other Updates:** 0  
 
@@ -44,7 +40,7 @@ No external installations required! 🔧
 ## 🚀 How To Use The Script
 1. Paste the script in your Python IDE (like VSCode or PyCharm)
 2. Make sure you have Python installed
-3. Run the code and start inputting player names when prompted
+3. Run the code and start inputting your text in console
 
 ---
 
@@ -55,6 +51,4 @@ If you ever need to install libraries in the future:
 
 ---
 
-And boom 💥 — your teams are ready to play!
-
-Happy coding & good luck with the match! 🏆👾
+Happy coding! 🏆👾
