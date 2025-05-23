@@ -1,0 +1,4 @@
+Hey, you found me! 
+I'm the file where you can copy-paste the longest texts in the world to analyze them, without errors!
+Make sure you have the script and this file (from which you are reading now) in the same folder for it to work correctly. 
+Enjoy!

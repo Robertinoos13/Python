@@ -15,16 +15,16 @@ On manual tests, the AI obtained only **61%** correct answers
 
 ## 🖥️ Output
 Once you input the specifications, the script procces your inputs, and outputs one of these possible categories:
-- **Low End**
-- **Mid Entry Level**
-- **Mid Range**
-- **Mid Superior**
-- **High End**
+- **Low End** - a very bad phone for that year
+- **Mid Entry Level** - decent for simple tasks (like social media, listening music, ect)
+- **Mid Range** - decent/good for gaming and general use
+- **Mid Superior** - PREMIUM (better) mid-rangers
+- **High End** - a very good phone for that year (it's very good for anything)
 
 ---
 
 ## 📚 Libraries Required
-To run this script, you'll need the following **built-in** Python libraries:
+To run that scripts, you'll need the following **built-in** Python libraries:
 - `sys`
 - `PyQt6`
 - `torch`
@@ -39,9 +39,9 @@ To run this script, you'll need the following **built-in** Python libraries:
 ---
 
 ## 📝 Quick Review of Update History
-- **Total Updates:** 0  
+- **Total Updates:** 1
 - **Bug Fixes:** 0  
-- **New Features Added:** 0  
+- **New Features Added:** 1  
 - **Other Updates:** 0  
 
 ---

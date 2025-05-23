@@ -108,7 +108,7 @@ class MyApp(QWidget):
 
         self.hz_slider = QSlider(Qt.Orientation.Vertical, self)
         self.hz_slider.setMinimum(30)
-        self.hz_slider.setMaximum(270)
+        self.hz_slider.setMaximum(240)
         self.hz_slider.setValue(self.hz_input)
         self.hz_slider.setTickPosition(QSlider.TickPosition.TicksAbove)
         self.hz_slider.setTickInterval(30)

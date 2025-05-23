@@ -1,16 +1,31 @@
-text = str(input("Enter you text here to work with it: \n"))
 current_index = 0
 commas = 0
 dots = 0
 words = 1
 started_counting_words = False
-letters = "qwertyuiopasdfghjklzxcvbnmăîâșțQWERTYUIOPASDFGHJKLZXCVBNMÎÂȘȚ"
+letters = "qwertyuiopasdfghjklzxcvbnmăîâșțñQWERTYUIOPASDFGHJKLZXCVBNMÎÂȘȚÑ"
 letters_num = 0
 numbers = "1234567890"
 numbers_single_num = 0
 paranthese = "({[<>]})"
 paranthese_num = 0
 nth = "{}"
+
+print("1. You will write something (you will not write something very long)")
+print("2. You will copy-paste a long text (add it on the 'input_long_texts_here.txt' file from the script's GitHub folder)")
+mode = int(input("Choose with number: "))
+
+if mode == 1:
+    text = str(input("Enter you text here to work with it: \n"))
+elif mode == 2:
+    try:
+        with open("input_long_texts_here.txt", encoding="utf-8") as f:
+            text = f.read()
+    except FileNotFoundError:
+        print(f"No file found named {f}")
+    except Exception as e:
+        print(f"A error ocuried: {e}")
+
 
 for i in text:
     if not started_counting_words and i in letters:
@@ -40,4 +55,5 @@ print(f"Dots: {dots}")
 print(f"Words: {words}")
 print(f"(),{nth},[] or <>: {paranthese_num} ({int(paranthese_num / 2)} pairs)")
 print(f"Total numbers (single): {numbers_single_num}")
+print(f"Total characters: {current_index}")
 print("-----------")
