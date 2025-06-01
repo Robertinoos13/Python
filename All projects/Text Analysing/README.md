@@ -44,9 +44,15 @@ To run this script, you dont need any library
 
 ---
 ## 🤔 How To Input a **Very Long Text Corectly?**
-In this folder, you have a file called "input_long_texts_here.txt". **Enter your text here and at the first INPUT from the script enter the number 2** (in the VSCode terminal, if you enter a very long text with copy-paste, you will get an error).
+In this folder, you have a file called "input_long_texts_here.txt". **Enter your text here and at the first INPUT from the script enter the number 2** (in the VSCode terminal, if you enter a very long text with copy-paste, you will get an error). Be sure that folder is opened in your IDE.
 
 ---
+## ATTENTION ❗
+
+In some situations, **the script output is ONLY APPROXIMATE, it is not always a perfect analysis.**
+
+---
+
 ### 💡 Extra Tip
 If you ever need to install libraries in the future:
 1. Press `Win + R`, type `cmd`, and press Enter
