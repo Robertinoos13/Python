@@ -37,9 +37,3 @@ I try to update this repository regularly (once every 1-5 weeks). Updates will i
 - **📋 More Details in README Files:** Adding more explanations for a better understanding.
 
 ---
-
-## 🌐 Repository Owner Accounts
-- **GitHub:** [@Robertinoos13](https://github.com/Robertinoos13)
-- **TikTok:** @robert_de_romania
-
-✨ Follow these accounts if you want to support the creator! ✨
