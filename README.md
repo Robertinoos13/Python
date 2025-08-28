@@ -28,12 +28,7 @@ Hey, hey you! 👋 Welcome to my repository! If you're new here and don't unders
 ---
 
 ## 🔄 More
-I try to update this repository regularly (once every 1-5 weeks). Updates will include:
-- **📜 New Scripts:** More Python script examples.
-- **🐞 Bug Fixing:** Fixing issues in older/current scripts.
-- **✨ Adding New Features:** Enhancing existing scripts with new capabilities.
-- **✍️ Corrections:** Fixing writing mistakes in README files or scripts.
-- **📁 File/Folder Reorganization:** Improving organization to make the repo clearer and easier to navigate.
-- **📋 More Details in README Files:** Adding more explanations for a better understanding.
-
+## ❗❗❗This repo will no longer be updated, starting with 08/28/2025 for personal reasons. ❗❗❗
+- Instead, you may use the scripts for personal purposes, such as learning, experimentation, or personal use.
+- But the good thing is that there are still some chances in the future that this repository will be updated, but they are small.
 ---
